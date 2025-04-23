@@ -7,11 +7,8 @@ export default defineConfig({
     headless: true,
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
-    baseURL: 'https://www.saucedemo.com/', // Replace with your actual URL
+    baseURL: 'https://www.saucedemo.com/',
   },
-  reporter: [
-    ['html', { outputFolder: 'reports/html' }],
-    ['allure-playwright'],
-  ],
+  reporter: [['html', { open: 'never' }]],
   globalSetup: require.resolve('../global-setup.ts'),
 });
