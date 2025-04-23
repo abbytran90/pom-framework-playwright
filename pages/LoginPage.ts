@@ -1,4 +1,5 @@
 import {Page, expect} from '@playwright/test';
+import { LoginMessage } from '@constants/ErrorMessage'
 
 export class LoginPage {
     readonly page: Page;
@@ -31,8 +32,9 @@ export class LoginPage {
         await expect(this.page.locator('text=Products')).toBeVisible();
     }
 
-    async assertLoginFaild(): Promise<void> {
-        await expect(this.page.locator('.error-message-container')).toBeVisible();
+    async assertLoginFaildWithEmptyUserNam(): Promise<void> {
+        await expect(this.page.locator('.error-message-container')).toBeVisible();  
+        await expect(this.page.locator('[data-test="error"]')).toHaveText(LoginMessage.EMPTY_USERNAME);
         
     }
 }

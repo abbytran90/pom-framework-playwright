@@ -9,8 +9,10 @@
     "baseUrl": ".",
     "paths": {
       "@data/*": ["Data/*"],
-      "@pages/*": ["pages/*"]
+      "@pages/*": ["pages/*"],
+      "@constants/*": ["constants/*"]
     }
   },
-  "include": ["tests", "pages", "Data", "config", "global-setup.ts", "testconfig.ts"]
+  "include": ["tests", "pages", "Data", "config", "global-setup.ts", "testconfig.ts", "constants"],
+  "exclude": ["node_modules", "dist"]
 }

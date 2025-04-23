@@ -1,8 +1,9 @@
-import { test } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 import { LoginPage } from '@pages/LoginPage';
-import { loginData } from '@data/login_data';
+import { loginData } from '@data/login_data'
 
 test.describe('Login Functionality', () => {
+  const emptyValue = "";
   test('Login with valid credentials should succeed', async ({ page }) => {
     const loginPage = new LoginPage(page);
 
@@ -11,12 +12,13 @@ test.describe('Login Functionality', () => {
     await loginPage.assertLoginSuccess();
   });
 
-  test('Login with invalid credentials should fail', async ({ page }) => {
+  test('Login with invalid usernam should fail', async ({ page }) => {
     const loginPage = new LoginPage(page);
 
     await loginPage.navigateToLogin();
-    await loginPage.login(loginData.invalidUser.username, loginData.invalidUser.password);
-    await loginPage.assertLoginFaild();
+    await loginPage.login(emptyValue, loginData.validUser.password);
+    await loginPage.assertLoginFaildWithEmptyUserNam();
+
   });
 
 });
