@@ -8,6 +8,7 @@ export default defineConfig({
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
     baseURL: 'https://www.saucedemo.com/',
+    browserName: 'chromium',
   },
   reporter: [['html', { outputFolder: 'playwright-report', open: 'never' }]],
   globalSetup: require.resolve('../global-setup.ts'),
