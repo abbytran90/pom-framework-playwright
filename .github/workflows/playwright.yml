@@ -1,4 +1,4 @@
-name: Playwright Tests
+name: pom-framework-playwright
 
 on:
   workflow_dispatch:
