@@ -5,7 +5,7 @@ export default defineConfig({
   timeout: 30000,
   use: {
     headless: true,
-    screenshot: 'only-on-failure',
+    screenshot: 'on',
     video: 'retain-on-failure',
     baseURL: 'https://www.saucedemo.com/',
     browserName: 'chromium',
