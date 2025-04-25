@@ -9,6 +9,6 @@ export default defineConfig({
     video: 'retain-on-failure',
     baseURL: 'https://www.saucedemo.com/',
   },
-  reporter: [['html', { open: 'never' }]],
+  reporter: [['html', { outputFolder: 'playwright-report', open: 'never' }]],
   globalSetup: require.resolve('../global-setup.ts'),
 });
