@@ -35,6 +35,7 @@ export class LoginPage {
         //Update the selector to match your app
         const ErrorMessageLocator = this.page.locator('.error-message-container');
         
+        //Get the contain of message(innerText())
         await expect(ErrorMessageLocator).toBeVisible();
         const actualMessage = (await ErrorMessageLocator.innerText()).trim();
 
