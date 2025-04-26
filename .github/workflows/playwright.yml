@@ -2,6 +2,11 @@ name: pom-framework-playwright
 
 on:
   workflow_dispatch:
+    inputs:
+      tag: 
+        description: 'Tag of regression to run'
+        required: true
+        default: '@regression'
   
 jobs:
   build-and-test:
